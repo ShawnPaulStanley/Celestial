@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { ShoppingCart } from '@phosphor-icons/react';
 
 function Navigation() {
   const { setIsCartOpen, getCartItemCount } = useCart();
@@ -17,7 +18,7 @@ function Navigation() {
           className="cart-button" 
           onClick={() => setIsCartOpen(true)}
         >
-          🛒 Cart {itemCount > 0 && <span className="cart-count">{itemCount}</span>}
+          <ShoppingCart size={20} weight="bold" /> Cart {itemCount > 0 && <span className="cart-count">{itemCount}</span>}
         </button>
       </div>
     </nav>

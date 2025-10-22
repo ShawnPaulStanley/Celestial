@@ -1,4 +1,16 @@
 import React, { useState } from 'react';
+import { 
+  Envelope, 
+  GameController, 
+  Star, 
+  Trophy, 
+  Clock, 
+  Target, 
+  Gift, 
+  Users, 
+  MapPin, 
+  Phone 
+} from '@phosphor-icons/react';
 
 function Contact() {
   const [email, setEmail] = useState('');
@@ -12,7 +24,7 @@ function Contact() {
   };
 
   return (
-    <div className="celestial-bg">
+    <div className="celestial-bg" style={{ paddingTop: '70px' }}>
       <div className="contact-message-banner celestial-glow">
         <div className="message-banner-content">
           <h3>Need Help?</h3>
@@ -28,7 +40,6 @@ function Contact() {
       <div className="celestial-contact-container">
         <div className="contact-newsletter-card celestial-glow">
           <div className="newsletter-header">
-            <img src="/images/celestial-logo.png" alt="Celestial" className="newsletter-logo" />
             <h2>Weekly Newsletter</h2>
           </div>
           
@@ -56,11 +67,13 @@ function Contact() {
               )}
             </div>
             <div className="newsletter-illustration">
-              <div className="envelope-icon">✉️</div>
+              <div className="envelope-icon">
+                <Envelope size={64} weight="fill" />
+              </div>
               <div className="floating-elements">
-                <span>🎮</span>
-                <span>⭐</span>
-                <span>🏆</span>
+                <span><GameController size={32} weight="fill" /></span>
+                <span><Star size={32} weight="fill" /></span>
+                <span><Trophy size={32} weight="fill" /></span>
               </div>
             </div>
           </div>
@@ -69,22 +82,22 @@ function Contact() {
             <h3 className="features-title">CELESTIAL FEATURES</h3>
             <div className="features-grid">
               <div className="feature-item">
-                <div className="feature-icon">⏱️</div>
+                <div className="feature-icon"><Clock size={40} weight="bold" /></div>
                 <h4>Gaming Hours</h4>
                 <p>Track your gaming sessions and earn rewards</p>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">🎯</div>
+                <div className="feature-icon"><Target size={40} weight="bold" /></div>
                 <h4>Tournaments</h4>
                 <p>Weekly competitions with amazing prizes</p>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">🎁</div>
+                <div className="feature-icon"><Gift size={40} weight="bold" /></div>
                 <h4>Special Deals</h4>
                 <p>Exclusive discounts for subscribers</p>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">👥</div>
+                <div className="feature-icon"><Users size={40} weight="bold" /></div>
                 <h4>Community</h4>
                 <p>Join our growing gaming family</p>
               </div>
@@ -108,21 +121,21 @@ function Contact() {
           <div className="contact-grid">
             <div className="contact-info">
               <div className="contact-info-item">
-                <span className="contact-icon">📍</span>
+                <span className="contact-icon"><MapPin size={32} weight="fill" /></span>
                 <div>
                   <h4>Visit Us</h4>
                   <p>123 Gaming Street, Cyber City</p>
                 </div>
               </div>
               <div className="contact-info-item">
-                <span className="contact-icon">📞</span>
+                <span className="contact-icon"><Phone size={32} weight="fill" /></span>
                 <div>
                   <h4>Call Us</h4>
                   <p>+1 (555) 123-4567</p>
                 </div>
               </div>
               <div className="contact-info-item">
-                <span className="contact-icon">📧</span>
+                <span className="contact-icon"><Envelope size={32} weight="fill" /></span>
                 <div>
                   <h4>Email Us</h4>
                   <p>support@celestialgaming.com</p>

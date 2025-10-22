@@ -1,18 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
 
+/* Hide scrollbar for all browsers */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 body {
   margin: 0;
-  font-family: 'VT323', monospace;
+  font-family: 'Press Start 2P', cursive;
   background: #111;
   color: #FFF9E3;
-  font-size: 18px;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, .nav-logo {
-  font-family: 'Press Start 2P', cursive;
   margin: 0;
   padding: 0.5em 0;
   line-height: 1.5;
+}
+
+p, span, button, input, textarea, a {
+  font-family: 'Press Start 2P', cursive;
 }
 .celestial-home {
   min-height: 100vh;
@@ -70,9 +85,11 @@ h1, h2, h3, .nav-logo {
   to { opacity: 1; transform: translateY(0); }
 }
 .celestial-glow {
-  box-shadow: 0 0 40px 10px #ffe06688, 0 0 80px 20px #6ec6ff44;
+  box-shadow: 0 0 30px 8px rgba(255, 224, 102, 0.4), 0 0 60px 15px rgba(110, 198, 255, 0.2);
   border-radius: 20px;
   padding: 2rem;
+  will-change: transform;
+  transform: translateZ(0);
 }
 .celestial-btn {
   background: linear-gradient(90deg, #ffe066 60%, #6ec6ff 100%);
@@ -232,6 +249,8 @@ h1, h2, h3, .nav-logo {
   margin-bottom: 2rem;
   text-align: center;
   border-bottom: 2px solid #ffe066;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .message-banner-content {
@@ -545,4 +564,6 @@ h1, h2, h3, .nav-logo {
   z-index: 0;
   background: url('https://raw.githubusercontent.com/astronautweb/space-background/master/images/stars.png') repeat;
   opacity: 0.3;
+  will-change: transform;
+  transform: translateZ(0);
 }

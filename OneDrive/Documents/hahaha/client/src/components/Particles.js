@@ -63,7 +63,7 @@ const Particles = () => {
 
     // Create particle array
     const particles = [];
-    const particleCount = 100;
+    const particleCount = 50; // Reduced from 100 for better performance
     
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle());
@@ -79,23 +79,23 @@ const Particles = () => {
         particle.draw();
       });
 
-      // Draw connections between nearby particles
-      particles.forEach(particle => {
-        particles.forEach(otherParticle => {
-          const dx = particle.x - otherParticle.x;
-          const dy = particle.y - otherParticle.y;
+      // Draw connections between nearby particles (optimized)
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 100) {
+          if (distance < 80) { // Reduced from 100
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 224, 102, ${0.1 * (1 - distance/100)})`;
+            ctx.strokeStyle = `rgba(255, 224, 102, ${0.15 * (1 - distance/80)})`;
             ctx.lineWidth = 0.5;
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
             ctx.stroke();
           }
-        });
-      });
+        }
+      }
 
       requestAnimationFrame(animate);
     };
